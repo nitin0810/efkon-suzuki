@@ -1,5 +1,7 @@
 {
   "name": "efkon-suzuki",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
