@@ -6,6 +6,12 @@
 </ion-header>
 
 <ion-content>
+  
+    <ion-item class="ion-margin-bottom" >
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-input ngModel name="userId" placeholder="User Id" required autofocus>
+        </ion-input>
+    </ion-item>
 <ion-button (click)="loader()"> Show Loader</ion-button>
 <ion-button (click)="toast()"> Show Toast</ion-button>
 <ion-button (click)="alert()"> Show Alert</ion-button>

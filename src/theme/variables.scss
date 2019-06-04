@@ -75,3 +75,9 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+// to remove the default border color for (valid,invaid) input values in android
+// we want to use our own indication of validations
+ion-item{
+  --highlight-height:0;
+}

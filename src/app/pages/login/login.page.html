@@ -1,4 +1,32 @@
-
 <ion-content>
-<ion-button (click)="submit()">Login</ion-button>
+
+    <form #loginForm="ngForm" (ngSubmit)="submit(loginForm.value)" novalidate autocomplete>
+
+        <div class="ion-text-center">
+
+            <ion-card class="ion-padding">
+
+                <ion-item class="ion-margin-bottom" [class.invalidInput]="(userId.touched || userId.dirty) && userId.invalid">
+                    <ion-icon name="person" slot="start"></ion-icon>
+                    <ion-input ngModel #userId="ngModel" name="userId" placeholder="User Id" required autofocus>
+                    </ion-input>
+                </ion-item>
+               
+                <ion-item class="ion-margin-bottom" [class.invalidInput]="(password.touched || password.dirty) && password.invalid">
+                    <ion-icon name="key" slot="start"></ion-icon>
+                    <ion-input type="password" ngModel #password="ngModel" name="password" placeholder="Password"
+                        required>
+                    </ion-input>
+                </ion-item>
+
+                <ion-button type="submit" expand="full" shape="round" [disabled]="loginForm.invalid || submitting">
+                    <ion-spinner *ngIf="submitting"></ion-spinner>&nbsp;&nbsp;
+                    {{submitting?'Please Wait...':'Log In'}}
+                </ion-button>
+
+            </ion-card>
+
+        </div>
+
+    </form>
 </ion-content>

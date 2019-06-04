@@ -10,6 +10,8 @@ import { UIService } from 'src/app/services/ui.service';
 })
 export class LoginPage implements OnInit {
 
+  submitting = false;
+
   constructor(
     private authService: AuthService,
     private navCtrl: NavController,
@@ -26,9 +28,14 @@ export class LoginPage implements OnInit {
     this.ui.enableMenu();
   }
 
-  submit() {
-    this.authService.saveToken('token');
-    this.navCtrl.navigateForward('/dashboard');
+  submit(form: { userId: string, password: string, captcha: string }) {
+    console.log(form);
+    this.submitting = true;
+    setTimeout(() => {
+      this.submitting = false;
+    }, 1000);
+    // this.authService.saveToken('token');
+    // this.navCtrl.navigateForward('/dashboard');
   }
 
 }
